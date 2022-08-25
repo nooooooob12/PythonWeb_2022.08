@@ -1,0 +1,147 @@
+html{
+  scroll-behavior: smooth;
+  margin: 0px auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body{
+  margin: 0px auto;
+}
+header{
+  margin: auto;
+  padding: auto;
+  min-height: 10vh;
+}
+footer{
+  font-family: "karma", sans-serif
+}
+a,li {
+    text-decoration: none;
+    color: black;
+     list-style: none;
+}
+/*header영역 Logo*/
+.Menu_bar {
+    display: flex;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    position:fixed;
+    background-color: #f8f9fa;
+    margin: auto;
+    font-family: "karma", sans-serif
+    
+}
+#Logo_name:hover {
+    cursor: pointer;
+}
+#Logo_name {
+    padding-left: 20px;
+    font-size: 20px;
+    padding-top: 5px;
+    width: 100%;
+    margin-bottom: 3px;
+    font-family: "karma", sans-serif;
+    font-weight: 600;
+}
+/*Header 영역 메뉴*/
+
+.dropdown{
+  position : relative;
+  display : inline-block;
+}
+
+.dropbtn_icon{
+  font-family : 'Material Icons';
+}
+.dropbtn{
+  background-color: #f5f5f5;
+  font-weight: 400;
+  color : rgb(37, 37, 37);
+  padding : 12px;
+  width :200px;
+  text-align: center;
+  cursor : pointer;
+  font-size : 12px;
+}
+.dropdown-content{
+  display : none;
+  position : absolute;
+  z-index : 1; /*다른 요소들보다 앞에 배치*/
+  font-weight: 400;
+  background-color: #f9f9f9;
+  min-width : 200px;
+  text-align: center;
+}
+
+.dropdown-content a{
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+.dropbtn:hover {
+  background-color: #ececec;
+}
+.dropdown-content a:hover{
+  background-color : #ececec;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/** 소개페이지 */
+.wrap1{margin: 12px 160px 12px 160px;}
+
+.w_title{text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+
+.w_subtitle{font-weight: 200; font-size:large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;}
+
+.wrap2{margin: 12px 50px 12px 50px; text-align: center; display: inline;}
+.wrap2 > img {width: 20%; height: 20%; margin-right: 30px;}
+
+
+/** 워드예시 소개 */
+.wrap3 { margin: 12px 150px 12px 150px; text-align: center;}
+.slide_wrapper {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  left: 0; top: 12px;
+  transition: left 0.5s ease-out;
+  padding: 0px;
+}
+.slides li:not(:last-child) {
+  float:left;
+  margin-right: 10px;
+}
+.controls {
+  text-align: center;
+  margin-top: 30px;
+}
+.controls span {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 4px;
+}
+.prev:hover,.next:hover{
+  background-color: #d49466;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/** 작사예시 */
+.wrap4 {margin: 12px 160px 12px 160px; text-align: center;}

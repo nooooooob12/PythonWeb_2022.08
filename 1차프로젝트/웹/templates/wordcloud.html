@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}HOT 키워드 - GIVE ME NOW!{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .w3-row-padding img {margin-bottom: 12px}
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+  <!-- Header -->
+  <header class="w3-panel w3-center w3-opacity" style="padding:0px 16px">
+    
+    <div class="w3-padding">
+      <div class="w3-bar w3-border">
+        <a href="#" class="w3-bar-item w3-button w3-light-grey">계절별</a>
+        <a href="{{ url_for('wordcloud2')}}" class="w3-bar-item w3-button">장르별</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Photo Grid -->
+  <div class="w3-row-padding w3" style="margin-bottom:128px" style="width:50%">
+    <div class="w3-half" text-align="center">
+      <img src="/static/img/가을.png" style="width:300" style="height:400">
+    </div>
+    <div class="w3-half">
+      <img src="/static/img/겨울.png" style="width:300" style="height:400">
+    </div>
+  <!-- End Page Content -->
+  </div>
+  
+{% endblock %}

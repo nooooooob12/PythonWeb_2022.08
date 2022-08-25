@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}서비스 소개 - GIVE ME NOW!{% endblock %}
+
+{% block content%}
+<div class="wrap3">
+<h1>워드클라우드 예시</h1>
+<div class="slide_wrapper">
+    <ul class="slides">
+        <li><img src="static\img\워드슬라이드.png" alt=""></li>
+        <li><img src="static\img\워드슬라이드1.png" alt=""></li>
+        <li><img src="static\img\워드슬라이드2 (1).png" alt=""></li>
+    </ul>
+</div>
+<p class="controls">
+    <span class="prev">prev</span>
+    <span class="next">next</span>
+</p>
+</div>
+<script src="{{ url_for('static', filename='js/js.js', q=1) }}"></script>
+{% endblock %}
