@@ -9,7 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <script src="https://kit.fontawesome.com/6a61595822.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css', q=2) }}">
+    <style>
+        body,html,#Logo_name {font-family: 'linber','linberB', 'Kotra-font';}
+    </style>
     <title>{% block title %}GIVE ME NOW!{% endblock %}</title>
     {% block head %}{% endblock %}
 </head>
@@ -23,12 +27,7 @@
             </span>
             <div class="dropdown">
                 <div class="dropbtn">
-                    <span class="dropbtn_icon">서비스 소개</span>
-                </div>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('intro')}}">GIVE ME NOW!</a>
-                    <a href="{{ url_for('word')}}">키워드 추천</a>
-                    <a href="{{ url_for('lyrics')}}">사용설명서</a>
+                    <a href="{{ url_for('intro')}}" style="color: black;"><span class="dropbtn_icon">서비스 소개</span></a>
                 </div>
             </div>
             <div class="dropdown">
@@ -45,18 +44,21 @@
                     <span class="dropbtn_icon">가사 추천</span>
                 </div>
                 <div class="dropdown-content">
-                    <a href="#">장르별 가사 문장 추천</a>
-                    <a href="#">나만의 문장 만들기</a>
+                    <a href="{{ url_for('sentence')}}">장르별 가사 추천</a>
+                    <a href="{{ url_for('makeLyric') }}">나만의 가사 추천</a>
                 </div>
             </div>
+        </nav>
     </header>
     {% block content %}
     {% endblock %}
     <footer>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center fixed-bottom">
-            <span class="navbar-text">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center fixed-bottom" style="bottom:-15px">
+            <span class="navbar-text" style="padding-bottom: 0;">
                 Copyright &copy; GIVE ME NOW! 2022 All Rights Reserved
-                <p align="center">MAIL : <a href="mailto:" chj1235@gmail.com" target="_blank">chj12365@gmail.com</a></p>
+                <p style="text-align: center;">&#128036; Presented by Happy Goose &#129442;</p>
+                
+                <!-- <p align="center">MAIL : <a href="mailto:" chj1235@gmail.com" target="_blank">chj12365@gmail.com</a></p> -->
             </span>
         </nav>
     </footer>

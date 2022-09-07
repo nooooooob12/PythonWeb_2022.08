@@ -1,33 +1,65 @@
+/* new font */
+@font-face {
+  src: url("/static/font/LinLibertine_R.ttf");
+  font-family:"linber";
+}
+
+@font-face {
+  src: url("/static/font/LinLibertine_RZ.ttf");
+  font-family:"linberB";
+}
+@font-face{
+  font-family: "Kotra-font";
+  src: url("/static/font/KOTRA_GOTHIC.ttf");
+}
+
 html{
-  scroll-behavior: smooth;
   margin: 0px auto;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
 }
 body{
+  font-family: "linber, linberB, Kotra-font";
   margin: 0px auto;
 }
 header{
   margin: auto;
   padding: auto;
-  min-height: 10vh;
+  min-height: 20vh;
 }
 footer{
-  font-family: "karma", sans-serif
+  font-family: "karma", sans-serif;
 }
 a,li {
     text-decoration: none;
     color: black;
      list-style: none;
 }
+img {
+  max-width: 100%;
+}
+/*모바일 - > pc/ 점점 커지는 화면 */
+@media screen and (min-width: 1024px) {
+
+}
+/* PC -> 모바일 / 점점 작아지는 화면 */
+@media screen and (max-width:1024px) {
+  .Menu_bar{
+    text-align: center;
+      flex-direction: column;
+      padding: 8px 24px;
+  }
+}
 /*header영역 Logo*/
 .Menu_bar {
     display: flex;
     width: 100%;
     padding-top: 5px;
-    padding-bottom: 12px;
+    padding-bottom: 2px;
     position:fixed;
+    z-index: 1;
     background-color: #f8f9fa;
     margin: auto;
     font-family: "karma", sans-serif
@@ -93,55 +125,233 @@ a,li {
   display: block;
 }
 
-
 /** 소개페이지 */
-.wrap1{margin: 12px 160px 12px 160px;}
-
-.w_title{text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
-
-.w_subtitle{font-weight: 200; font-size:large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-text-align: center;}
-
-.wrap2{margin: 12px 50px 12px 50px; text-align: center; display: inline;}
-.wrap2 > img {width: 20%; height: 20%; margin-right: 30px;}
-
-
-/** 워드예시 소개 */
-.wrap3 { margin: 12px 150px 12px 150px; text-align: center;}
-.slide_wrapper {
+.section{
   position: relative;
-  width: 300px;
-  margin: 0 auto;
-  height: 300px;
-  overflow: hidden;
 }
-
-.slides {
-  position: absolute;
-  left: 0; top: 12px;
-  transition: left 0.5s ease-out;
-  padding: 0px;
-}
-.slides li:not(:last-child) {
-  float:left;
-  margin-right: 10px;
-}
-.controls {
+#text { color: white;}
+.wrap1{
+  padding: 12px 0px;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+  background-color: #333;
+  color: #fff;
+}
+.w_title{text-align: center;}
+.w_subtitle{font-weight: 400;
+  font-size:1.2rem;
+text-align: center;}
+.wrap1_container{
+  height: 100%;
   margin-top: 30px;
+  text-align: center;
 }
-.controls span {
-  background: #333;
-  color: white;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 4px;
+.w_graytitle{
+  margin: 12px 0px;
+  color: #bdbdbd;
 }
-.prev:hover,.next:hover{
-  background-color: #d49466;
-  border-radius: 4px;
-  cursor: pointer;
+.row_container{
+  width: 100%;
+  margin-top: 32px;
+  text-align: center;
+  position: relative;
+}
+.iconbox{
+  display: inline-block;
+  text-align: center;
+  margin: 12px 24px;
 }
 
-/** 작사예시 */
-.wrap4 {margin: 12px 160px 12px 160px; text-align: center;}
+.wrap2{margin-top: 100px;
+  text-align: center;
+  height: 90vh;
+
+
+  /* opacity: 0;
+  transition: all .5s ease; */
+}
+/* #wrap_event-roteteL{
+  transform: translate(100px, 0);
+}
+.wrap2.show {
+    opacity: 1;
+    transform: none;
+  } */
+  #wrap2_img{
+    padding-bottom: 77px;
+  }
+  #slidesShow{
+      border: 2px solid white;
+      border-radius: 4px;
+      position: relative;
+      width: 600px;
+      margin: 20px auto;
+      height: 459px;
+      overflow: hidden;
+  }
+  .slides{
+    height: 620px;
+    position: absolute;
+    left: 0; top: 0;
+    transition: left 0.5s ease-out;
+    padding: 0px;;/* 슬라이드할 사진과 마진 총 넓이 */ }
+    .slides li:first-child{
+    margin-left: 10px;
+    }
+    .slides li:not(:last-child){
+      float:left;
+      margin-right: 10px;
+    }
+    .slides li{
+      float: left;
+    }
+    .controller span{
+      position: absolute;
+      background-color: transparent;
+      color: black;
+      text-align: center;
+      border-radius: 50%;
+      padding: 10px 10px;
+      top: 0;
+      cursor: pointer;
+    }
+    .controller span:hover{
+      background-color: rgba(128, 128, 128, 0.11);
+    }
+    .prev {
+      margin-left: 30px;
+      left: 10px;
+    }
+    .next{
+      right: 10px;
+    }
+
+  .button{
+    background:#333;
+    color:#fff;
+    border:none;
+    border-radius: 4px;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    padding:8px 12px;
+  }
+  .button:hover{
+    background:#FFF;
+    color:black;
+  }
+  .button:before,.button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #333;
+    transition:400ms ease all;
+  }
+  .button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .button:hover:before,.button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+/* HOT 키워드 */
+.container {
+  display: flex;
+  justify-content: center;
+}
+.btn_wd {
+  text-align: center;
+  font-size: 1.25rem; 
+}
+.btn_link{
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: #ececec;
+}
+.btn_active{
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: #bdbdbd;
+}
+.w3-content{
+  height: 100vh;
+}
+
+.word_box{
+  margin-top: 12px ;
+  margin-bottom: 12px;
+  text-align: center;
+  display: inline-block;
+  width: 30vw;
+  height: 30vh;
+  position: relative;
+  border: 1px solid black;
+}
+
+.word_title{
+  display: block;
+  background-color: #ececec;
+  color: #333;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 29.8vw;
+  height: 2.9vh;
+}
+
+.wrap5 {
+  border: 3px solid #ddd;
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 30px 30px 10px 30px;
+  /* padding-left: 30px;
+  padding-right: 30px; */
+  text-align: center;
+  justify-content: center;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  /* display: flex; */
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+#info {
+  display: flow-root;
+  text-align: center;
+}
+
+/* 위에 컨테이너 이미 있지만 일단 따로 작성 */  
+.container {
+  display: flex;
+  border-radius: 0.5rem;
+  justify-content: center;
+}
+
+.option_div {
+  border-radius: 0.5rem;
+  margin-left: 244px;
+  margin-top: 35px;
+  border: 2px solid rgb(180, 180, 180); 
+  width: 350px;
+}
+
+#options {
+  margin: 5px;
+  padding: 15px 15px 0 15px;
+}
